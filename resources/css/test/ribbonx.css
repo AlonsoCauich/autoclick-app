@@ -1,0 +1,30 @@
+.card i {
+    position: absolute;
+    top:40px;
+    left: -15px;
+    width: 280px;
+    height: 50px;
+    background: red;
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+}
+.card i::before {
+    content: '';
+    position: absolute;
+    top:50px;
+    width: 15px;
+    height: 30px;
+    background: #f00;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    z-index: 2;
+}
+.card i::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    width: 15px;
+    height: 15px;
+    background: #af43f1;
+    z-index: 1;
+}

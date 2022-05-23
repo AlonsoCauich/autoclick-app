@@ -1,0 +1,151 @@
+    .ribbon {
+        --f: 10px; /* control the folded part*/
+        --r: 15px; /* control the ribbon shape */
+        --t: 10px; /* the top offset */
+        
+        position: absolute;
+        inset: var(--t) calc(-1*var(--f)) auto auto;
+        padding: 0 10px var(--f) calc(10px + var(--r));
+        clip-path: 
+        polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - var(--f)),
+            calc(100% - var(--f)) 100%,
+
+            calc(100% - var(--f)) calc(100% - var(--f)),
+            0 calc(100% - var(--f)),
+            var(--r) calc(50% - var(--f)/2)
+            );
+        background: #BD1550;
+        box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+    }
+    .dmm_ribbon span {
+        display: block;
+        height: 100%;
+        position: relative;
+        -moz-border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        border-radius: 5px 0 0 0;
+        background-color: #42a5d4;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #42a5d4), color-stop(5px, #42a5d4), color-stop(15%, #24769d), color-stop(65%, #24769d), color-stop(100%, #42a5d4));
+        background-image: -webkit-linear-gradient(#42a5d4 0, #42a5d4 5px, #24769d 15%, #24769d 65%, #42a5d4 100%);
+        background-image: -moz-linear-gradient(#42a5d4 0, #42a5d4 5px, #24769d 15%, #24769d 65%, #42a5d4 100%);
+        background-image: -ms-linear-gradient(#42a5d4 0, #42a5d4 5px, #24769d 15%, #24769d 65%, #42a5d4 100%);
+        background-image: -o-linear-gradient(#42a5d4 0, #42a5d4 5px, #24769d 15%, #24769d 65%, #42a5d4 100%);
+        background-image: linear-gradient(#42a5d4 0, #42a5d4 5px, #24769d 15%, #24769d 65%, #42a5d4 100%);
+        padding-top: 35px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        --f: 10px; /* control the folded part*/
+        --r: 15px; /* control the ribbon shape */
+        --t: 10px; /* the top offset */
+        /* clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%); */
+        /*clip-path: polygon(10% 0%, 100% 0%, 95% 100%, 0% 100%);*/
+
+        clip-path: polygon(0% 0%, 100% 0%, 94% 70%, 7.8% 71%, 6.3% 76.3%, 7.7% 83.3%, 0% 83.3%);
+
+
+
+    }
+
+  .dmm_ribbon {
+      
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 0;
+      text-align: center;
+      color: #fff;
+      width: 500px;
+      height: 100px;
+      /* top: -5px; 
+      left: 20px;*/
+      -moz-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 0 2px rgba(0, 0, 0, 0.3);
+      -moz-border-radius: 5px 0 0 0;
+      -webkit-border-radius: 5px 0 0 0;
+      border-radius: 5px 0 0 0;
+  }
+
+  .dmm_ribbon:hover {
+      height: 120px;
+  }
+
+  .dmm_ribbon:hover span {
+      padding-top: 55px;
+  }
+
+  .dmm_ribbon:before,
+  .dmm_ribbon:after {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      width: 20px;
+      height: 70px;
+      background: #666;
+  }
+
+  .dmm_ribbon:before {
+      bottom: 18px;
+      right: 5px;
+      -moz-transform: rotate(12deg) skew(18deg, 28deg);
+      -webkit-transform: rotate(12deg) skew(18deg, 28deg);
+      border-right-color: #174c66;
+      -o-transform: rotate(12deg) skew(18deg, 28deg);
+      -ms-transform: rotate(12deg) skew(18deg, 28deg);
+      transform: rotate(12deg) skew(18deg, 28deg);
+      -moz-box-shadow: 8px 25px 4px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 8px 25px 4px rgba(0, 0, 0, 0.5);
+      box-shadow: 8px 25px 4px rgba(0, 0, 0, 0.5);
+      border-top-color: #174c66;
+  }
+
+  .dmm_ribbon:after {
+      bottom: 16px;
+      left: 5px;
+      -moz-transform: rotate(-23deg) skew(-18deg, -28deg);
+      -webkit-transform: rotate(-23deg) skew(-18deg, -28deg);
+      -o-transform: rotate(-23deg) skew(-18deg, -28deg);
+      -ms-transform: rotate(-23deg) skew(-18deg, -28deg);
+      transform: rotate(-23deg) skew(-18deg, -28deg);
+      -moz-box-shadow: -5px 20px 4px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: -5px 20px 4px rgba(0, 0, 0, 0.5);
+      box-shadow: -5px 20px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .dmm_ribbon span:before,
+  .dmm_ribbon span:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+  }
+
+  .dmm_ribbon span:before {
+      border-style: solid;
+      border-width: 5px;
+      border-color: transparent;
+      right: -5px;
+      top: 0;
+      -moz-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      border-top-color: #174c66;
+      border-left-color: #174c66;
+  }
+
+  .dmm_ribbon span:after {
+      bottom: -20px;
+      left: 0;
+      border-style: solid;
+      border-width: 20px;
+      border-color: #42a5d4 #42a5d4 transparent #42a5d4;
+  }
